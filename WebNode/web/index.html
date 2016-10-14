@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>web</title>
+</head>
+<script src="jquery-3.1.1.js">
+</script>
+<script>
+$(document).ready(function(){
+  function lauchBox(texto){
+    $("body").append('<div id="windowsBackgroud"></div>');
+    $("#windowsBackgroud").css({
+      "position":"fixed",
+      "top":"8px",
+      "left":"0px",
+      "width":"100%",
+      "height":"100%",
+      "background":"rgba(0,0,0,0.63)",
+    });
+    $("#windowsBackgroud").html('<div id="form"></div>');
+    $("#form").css({
+      "width":"400px",
+      "height":"180px",
+      "background":"white",
+      "margin":"0 auto 0 auto",
+      "position":"relative",
+      "top":"30%",
+      "border-radius":"5px",
+      "padding":"10px",
+      "cursor":"default",
+      "-webkit-user-select":"nome"
+    });
+    $("#form").html('<div id="close"></div>');
+    $("#close").css({
+      "width":"80px",
+      "height":"30px",
+      "background":"red",
+      "position":"absolute",
+      "right":"18px"
+    });
+    $("#form").append('<div id="info"></div>');
+    $("#info").css({
+      "font-family":"Calibri",
+      "font-size":"15px",
+      "color":"black",
+      "margin-top":"16%"
+    });
+    $("#info").text(texto)
+    $("#close").click(function(){
+      closeBox();
+    });
+  }
+  lauchBox("hola perros");
+  function closeBox(){
+    $("#windowsBackgroud").remove();
+  }
+});
+</script>
+<body>
+  <h1>hola Perritas xD</h1>
+  <img src="/imagen.jpg">
+</body>
+</html>
